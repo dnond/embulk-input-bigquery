@@ -1,27 +1,34 @@
 # Bigquery input plugin for Embulk
 
-TODO: Write short description here and embulk-input-bigquery.gemspec file.
+This plugin is embulk input from BigQuery.
 
 ## Overview
 
 * **Plugin type**: input
-* **Resume supported**: yes
-* **Cleanup supported**: yes
+* **Resume supported**: no
+* **Cleanup supported**: no
 * **Guess supported**: no
+
 
 ## Configuration
 
-- **option1**: description (integer, required)
-- **option2**: description (string, default: `"myvalue"`)
-- **option3**: description (string, default: `null`)
+- **service_account_file** : p12 file
+- **project_id** : project_id of target_table
+- **dataset_id** : dataset_id of target_table
+- **table_id** : tablet_id of target_table
+- **service_email** : servive_email
+
 
 ## Example
 
 ```yaml
 in:
   type: bigquery
-  option1: example1
-  option2: example2
+  service_account_file: /Users/my/my_project.p12
+  project_id: my_project
+  dataset_id: test_dataset
+  table_id: test_table
+  service_email: 1234567890-aaaabbbcccddd@apps.googleusercontent.com
 ```
 
 
